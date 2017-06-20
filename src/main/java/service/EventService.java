@@ -15,15 +15,6 @@ import java.util.List;
  */
 public class EventService {
 
-    public static void main(String[] args) throws SQLException {
-        final EventService eventService = new EventService();
-        final Event event = new Event();
-        event.setTitle("test");
-        event.setDate(LocalDate.now().toString());
-        event.setDescription("test test");
-        eventService.createEntity(event);
-    }
-
     private Dao<Event, String> dao;
 
     public EventService() throws SQLException {
