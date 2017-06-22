@@ -17,20 +17,18 @@ public class ApprenticeService {
 
     public static void main(String[] args) throws SQLException {
 
-        ApprenticeService apprenticeService = new ApprenticeService();
-        List<Apprentice> apprenticeList = apprenticeService.getAll();
-        for (Apprentice apprentice : apprenticeList) {
-            System.out.println(apprentice.getId() + " "
-                    + apprentice.getName()
-                    + " "
-                    + apprentice.getAge()
-                    + " "
-                    + apprentice.getSkills());
-        }
+        final Apprentice apprentice = new Apprentice();
+
+        apprentice.setAge(12);
+        apprentice.setSkills("Linux");
+        apprentice.setName("Alex");
+
+        final ApprenticeService apprenticeService = new ApprenticeService();
+        apprenticeService.createEntity(apprentice);
     }
 
     public ApprenticeService() throws SQLException {
-        String url = "jdbc:sqlite:C:\\Users\\ОП\\IdeaProjects\\TryJavaFx\\itea.sqlite";
+        String url = "jdbc:sqlite:/Users/igor/workspace/TryJavaFx/itea.sqlite";
         ConnectionSource source = new JdbcConnectionSource(url);
         dao = DaoManager.createDao(source, Apprentice.class);
     }
