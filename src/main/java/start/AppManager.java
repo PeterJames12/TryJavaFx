@@ -13,7 +13,7 @@ public class AppManager extends Application {
 
     @Override
     public void start(Stage primaryStage) throws Exception {
-        Parent root = FXMLLoader.load(getClass().getResource("/IteaCourse.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("/Player.fxml"));
         primaryStage.setTitle("Itea");
         Scene scene = new Scene(root);
         primaryStage.setScene(scene);
